@@ -50,7 +50,7 @@ export default function Widget04() {
                 )}
             </AnimatePresence>
 
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                 {open && (
                     <motion.div
                         initial={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -62,8 +62,8 @@ export default function Widget04() {
                         {/* Header */}
                         <div className="bg-linear-to-r from-slate-800 to-sky-700 px-4 py-4 flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10">
-                                    <Lottie animationData={chatbotAnimation} loop autoplay />
+                                <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center text-white">
+                                    <Bot size={18} />
                                 </div>
                                 <div>
                                     <p className="text-white font-bold text-sm">Acme Teknik Destek</p>
@@ -109,7 +109,7 @@ export default function Widget04() {
                 whileTap={{ scale: 0.9 }}
                 animate={idle ? { y: [0, -3, 0] } : { y: 0 }}
                 transition={idle ? { repeat: Infinity, duration: 1.6, ease: "easeInOut" } : { duration: 0.2 }}
-                onClick={() => { setOpen(!open); dismiss() }}
+                onClick={() => { setOpen((prev) => !prev); dismiss() }}
                 className="w-24 h-24 flex items-center justify-center"
             >
                 <div className="w-20 h-20 scale-125 drop-shadow-xl">
