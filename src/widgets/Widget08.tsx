@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Send } from "lucide-react"
+import { X, Send, Bot } from "lucide-react"
 import Lottie from "lottie-react"
 import roboticAnimation from "../assets/lotties/robotic.json"
 import { useProactiveMessage } from "../hooks/useProactiveMessage"
@@ -10,7 +10,7 @@ export default function Widget08() {
     const { visible: proactiveVisible, dismiss } = useProactiveMessage(3000)
 
     return (
-        <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
+        <div className="fixed bottom-14 right-6 flex flex-col items-end gap-3 z-50">
 
             <AnimatePresence>
                 {!open && proactiveVisible && (
@@ -21,7 +21,7 @@ export default function Widget08() {
                         className="relative bg-gray-900 rounded-2xl rounded-br-sm shadow-2xl border border-purple-800 px-4 py-3 max-w-52"
                     >
                         <p className="text-sm font-semibold text-purple-300">Sistem çevrim içi... 🔮</p>
-                        <p className="text-xs text-gray-500 mt-1">Komutunuzu bekliyorum.</p>
+                        <p className="text-xs text-gray-500 dark:text-zinc-300 mt-1">Komutunuzu bekliyorum.</p>
                         <button
                             onClick={dismiss}
                             className="absolute -top-2 -right-2 w-5 h-5 bg-purple-900 rounded-full flex items-center justify-center hover:bg-purple-800 transition"
@@ -39,16 +39,10 @@ export default function Widget08() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ duration: 0.2 }}
-                        className="w-80 rounded-2xl shadow-2xl overflow-hidden bg-gray-900 border border-purple-800"
+                        className="w-[19rem] rounded-2xl shadow-2xl overflow-hidden bg-gray-900 border border-purple-800"
                     >
                         {/* Header */}
                         <div className="relative px-4 py-4 flex items-center justify-between overflow-hidden bg-gray-950">
-                            {/* Işık efekti */}
-                            <motion.div
-                                animate={{ opacity: [0.3, 0.7, 0.3] }}
-                                transition={{ repeat: Infinity, duration: 3 }}
-                                className="absolute inset-0 bg-linear-to-r from-purple-900/30 to-transparent"
-                            />
                             <div className="flex items-center gap-3 z-10">
                                 <div className="w-10 h-10">
                                     <Lottie animationData={roboticAnimation} loop autoplay />
@@ -66,7 +60,11 @@ export default function Widget08() {
                         {/* Messages */}
                         <div className="px-4 py-4 flex flex-col gap-3 bg-gray-900 min-h-36">
                             <div className="flex gap-2 items-end">
-                                <div className="w-6 h-6 rounded-full bg-purple-700 shrink-0" />
+                                <div className="w-7 h-7 rounded-full overflow-hidden bg-gray-800 border border-purple-700 shrink-0">
+                                    <div className="w-full h-full flex items-center justify-center text-purple-300">
+                                        <Bot size={14} />
+                                    </div>
+                                </div>
                                 <div className="bg-gray-800 border border-purple-900 rounded-2xl rounded-bl-sm px-3 py-2 text-sm text-purple-200 shadow-sm max-w-56">
                                     Destek süreci başlatılıyor... Nasıl yardımcı olabilirim? 🤖
                                 </div>
@@ -91,12 +89,10 @@ export default function Widget08() {
             <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                animate={{ boxShadow: ["0 0 10px #7c3aed", "0 0 25px #7c3aed", "0 0 10px #7c3aed"] }}
-                transition={{ repeat: Infinity, duration: 2 }}
                 onClick={() => { setOpen(!open); dismiss() }}
-                className="w-16 h-16 bg-gray-950 border border-purple-700 rounded-full flex items-center justify-center shadow-lg overflow-hidden"
+                className="w-[5.5rem] h-[5.5rem] rounded-full flex items-center justify-center"
             >
-                <div className="w-14 h-14 scale-110">
+                <div className="w-[4.5rem] h-[4.5rem] scale-[1.2] drop-shadow-xl">
                     <Lottie animationData={roboticAnimation} loop autoplay />
                 </div>
             </motion.button>

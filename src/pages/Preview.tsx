@@ -36,7 +36,7 @@ export default function Preview() {
             {/* Back Button */}
             <button
                 onClick={() => navigate("/")}
-                className="absolute top-4 left-4 z-50 flex items-center gap-2 bg-white border shadow-sm px-3 py-2 rounded-full text-sm hover:bg-gray-50 transition"
+                className="absolute top-20 left-6 z-50 flex items-center gap-2 border border-gray-200 dark:border-zinc-700 bg-white/95 dark:bg-zinc-900/95 text-gray-700 dark:text-zinc-100 shadow-sm px-3 py-2 rounded-full text-sm hover:bg-gray-50 dark:hover:bg-zinc-800 transition backdrop-blur"
             >
                 <ArrowLeft size={15} />
                 Geri
