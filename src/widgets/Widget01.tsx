@@ -21,8 +21,8 @@ export default function Widget01() {
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white text-xs font-bold">A</div>
                                 <div>
-                                    <p className="text-white text-sm font-semibold">Acme Support</p>
-                                    <p className="text-violet-200 text-xs">Typically replies in minutes</p>
+                                    <p className="text-white text-sm font-semibold">Acme Destek</p>
+                                    <p className="text-violet-200 text-xs">Genellikle birkaç dakika içinde yanıtlar</p>
                                 </div>
                             </div>
                             <button onClick={() => setOpen(false)} className="text-white/70 hover:text-white transition">
@@ -33,9 +33,9 @@ export default function Widget01() {
                         {/* Messages */}
                         <div className="px-4 py-4 flex flex-col gap-3 bg-gray-50 min-h-40">
                             <div className="flex gap-2 items-end">
-                                <div className="w-6 h-6 rounded-full bg-violet-600 flex-shrink-0" />
+                                <div className="w-6 h-6 rounded-full bg-violet-600 shrink-0" />
                                 <div className="bg-white rounded-2xl rounded-bl-sm px-3 py-2 text-sm shadow-sm max-w-56">
-                                    👋 Hey! How can we help you today?
+                                    👋 Merhaba! Bugün size nasıl yardımcı olabiliriz?
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ export default function Widget01() {
                         <div className="px-3 py-3 border-t bg-white flex items-center gap-2">
                             <input
                                 className="flex-1 text-sm outline-none px-3 py-2 rounded-full bg-gray-100 placeholder:text-gray-400"
-                                placeholder="Type a message..."
+                                placeholder="Bir mesaj yazın..."
                             />
                             <button className="w-8 h-8 bg-violet-600 rounded-full flex items-center justify-center text-white hover:bg-violet-700 transition">
                                 <Send size={14} />
