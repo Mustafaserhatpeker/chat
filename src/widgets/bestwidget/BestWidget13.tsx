@@ -2,11 +2,11 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Send, Sparkles, Bot } from "lucide-react"
 import Lottie from "lottie-react"
-import orbitAnimation from "../../assets/lotties/best/emerald.json"
+import orbitAnimation from "../../assets/lotties/best/magenta.json"
 import { useGreeting } from "../../hooks/useGreeting"
 import { useProactiveMessage } from "../../hooks/useProactiveMessage"
 
-export default function BestWidget8() {
+export default function BestWidget13() {
     const [open, setOpen] = useState(false)
     const greeting = useGreeting()
     const { visible: proactiveVisible, dismiss } = useProactiveMessage(4000)

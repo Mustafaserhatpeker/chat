@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Send, Sparkles, Bot } from "lucide-react"
 import Lottie from "lottie-react"
-import orbitAnimation from "../../assets/lotties/ai_animation_flow.json"
+import orbitAnimation from "../../assets/lotties/best/arctic.json"
 import { useGreeting } from "../../hooks/useGreeting"
 import { useProactiveMessage } from "../../hooks/useProactiveMessage"
 
@@ -13,7 +13,6 @@ export default function BestWidget2() {
 
     return (
         <div className="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
-
             <AnimatePresence>
                 {!open && proactiveVisible && (
                     <motion.div
