@@ -3,18 +3,28 @@ import { MessageCircle } from "lucide-react"
 import { motion } from "framer-motion"
 import type { Variants } from "framer-motion"
 
-const widgets = [
-    { id: "widget-01", label: "Widget 01", gradient: "from-violet-600 to-violet-700" },
-    { id: "widget-02", label: "Widget 02", gradient: "from-blue-600 to-indigo-600" },
-    { id: "widget-03", label: "Widget 03", gradient: "from-slate-800 to-indigo-900" },
-    { id: "widget-04", label: "Widget 04", gradient: "from-pink-500 to-rose-400" },
-    { id: "widget-05", label: "Widget 05", gradient: "from-amber-400 to-orange-400" },
-    { id: "widget-06", label: "Widget 06", gradient: "from-sky-500 to-cyan-400" },
-    { id: "widget-07", label: "Widget 07", gradient: "from-emerald-500 to-teal-400" },
-    { id: "widget-08", label: "Widget 08", gradient: "from-gray-900 to-purple-900" },
-    { id: "widget-09", label: "Widget 09", gradient: "from-violet-600 to-fuchsia-500" },
-    { id: "widget-10", label: "Widget 10", gradient: "from-indigo-900 to-purple-900" },
+const gradients = [
+    "from-violet-600 to-violet-700",
+    "from-blue-600 to-indigo-600",
+    "from-slate-800 to-indigo-900",
+    "from-pink-500 to-rose-400",
+    "from-amber-400 to-orange-400",
+    "from-sky-500 to-cyan-400",
+    "from-emerald-500 to-teal-400",
+    "from-gray-900 to-purple-900",
+    "from-violet-600 to-fuchsia-500",
+    "from-indigo-900 to-purple-900",
 ]
+
+const widgets = Array.from({ length: 30 }, (_, index) => {
+    const number = String(index + 1).padStart(2, "0")
+
+    return {
+        id: `widget-${number}`,
+        label: `BestWidget ${number}`,
+        gradient: gradients[index % gradients.length],
+    }
+})
 
 const miniPreviewVariants: Variants = {
     rest: { opacity: 0, y: 8, scale: 0.95 },
