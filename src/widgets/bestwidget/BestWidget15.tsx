@@ -2,7 +2,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, Send, Sparkles, Bot } from "lucide-react"
 import Lottie from "lottie-react"
-import orbitAnimation from "../../assets/lotties/best/neon_green.json"
+import orbitAnimation from "../../assets/lotties/best/candy_rave.json"
 import { useGreeting } from "../../hooks/useGreeting"
 import { useProactiveMessage } from "../../hooks/useProactiveMessage"
 
